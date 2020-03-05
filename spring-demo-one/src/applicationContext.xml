@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Load the properties files  -->
+    <context:property-placeholder location="classpath:sport.properties"/>
+    <!-- Define your beans here -->
+    
+    <!-- Define the dependency -->
+    <bean id="myFortune"
+    class="com.luv2code.springdemo.HappyFortuneService"></bean>
+    
+    <bean id ="myRugbyFortune"
+    class="com.luv2code.springdemo.RugbyHappyFortuneService"></bean>
+    
+    <bean id="myDailyFortune"
+    class="com.luv2code.springdemo.FortuneDirectory"></bean>
+    
+    <bean id="myCoach" 
+    class="com.luv2code.springdemo.TrackCoach">	
+    <!-- Set up the constructor injection -->
+    	<constructor-arg ref="myFortune"></constructor-arg>
+    </bean>
+    
+    <bean id="rugbyCoach"
+    class="com.luv2code.springdemo.RugbyCoach">
+    	<constructor-arg ref="myRugbyFortune"></constructor-arg>
+    </bean>
+    
+    <bean id="myCricketCoach"
+    class ="com.luv2code.springdemo.CricketCoach">
+    	<!--  setup our setter-injection
+    			spring will take the name and add set to the front and change the first letter to uppercase
+    			in other words spring will interpret below line as
+    			setFortuneService(myFortune)
+    			
+    			furthermore we are also passing on values to setter methods,
+    			the first method we are passing an custom object that was created
+    			via the myFortune bean
+    			
+    			and for the other two methods we are directly passing values 
+    			that have been read out of a property file that was declared
+    			in line 11
+    	 -->
+    	<property name="fortuneService" ref="myDailyFortune"></property>
+    	<property name="emailAddress" value="${foo.email}"></property>
+    	<property name="team" value="${foo.team}"></property>
+    </bean>
+</beans>
+
+
+
+
+
