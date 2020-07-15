@@ -188,15 +188,15 @@ public class MyDemoLoggingAspect {
 			myLogger.warning(e.getMessage());
 			
 			//give the user a custom message and handle the exception
-			/*
+			/**/
 			result = " \n ===> An exception occured! Application restored with defaults ";
-			*/
+			
 			
 			/*
 			 * Other option is to throw the exception to the calling program
 			 * 
 			 */
-			throw e;
+			//throw e;
 			
 		}
 		myLogger.info("  \n====> @Around POST excuting on Method: "+tmpMethosig);

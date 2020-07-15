@@ -29,8 +29,8 @@ public class AfterFinallyDemo {
 		
 		try {
 			// add a boolean flag to simulate exception handling
-			boolean tripWire = false;
-			theAccountDAO.findAccounts(tripWire);	
+			boolean tripWire = true;
+			theAccounts = theAccountDAO.findAccounts(tripWire);	
 		}
 		catch(Exception exc) {
 			System.out.println("\n\nMain Program ... caught exception: " +exc);

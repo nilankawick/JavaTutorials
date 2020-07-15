@@ -41,10 +41,12 @@ public class SetterDemoApp {
 		/*
 		 * This will only work if theCoach is a type CricketCoach not COACH
 		 */
+		/**/
 		System.out.println(theCoach.getEmailAddress());
-	  System.out.println(theCoach.getTeam());
+		System.out.println(theCoach.getTeam());
 		theCoach.testInterfaceScope();
 		System.out.println("");
+		
 		
 		/*
 		 * This will only work if theCoach is a type CricketCoach not COACH

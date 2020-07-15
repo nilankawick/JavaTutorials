@@ -25,7 +25,7 @@ public class SportConfig {
 		 
 	}
 	
-	/*
+	/**/
 	@Bean 
 	public FortuneService randomFortuneService(){
 		return new RandomFortuneService();
@@ -46,6 +46,20 @@ public class SportConfig {
 	@Bean
 	public Coach badmintonCoach(){
 		 return new BadmintonCoach();
+		 
+	}
+	
+	
+	
+	@Bean
+	public Coach swimCoach(){
+		 return new SwimCoach();
+		 
+	}
+	/*
+	@Bean
+	public Coach boxingCoach(){
+		 return new BoxingCoach();
 		 
 	}
 	*/

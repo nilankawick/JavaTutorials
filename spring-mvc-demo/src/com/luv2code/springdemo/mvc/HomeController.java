@@ -14,18 +14,19 @@ public class HomeController {
 	
 	/*
 	 * This is the default page that will load
-	 */
+	 
 	@RequestMapping("/")
 	public String showIndex(){
 		return "Index";
 	}
+	*/
 	
-	/*
+	/**/
 	@RequestMapping("/")
 	public String showIndex1(){
 		return "main-menu";
 	}
-	*/
+	
 	
 }
  

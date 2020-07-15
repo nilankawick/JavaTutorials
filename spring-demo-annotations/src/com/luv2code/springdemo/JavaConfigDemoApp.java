@@ -33,22 +33,26 @@ public class JavaConfigDemoApp {
 		System.out.println(theCoach2.getDailyFortune());
 		System.out.println("");
 
+		
+		
+		
 		// Used for examining property files
-		SwimCoach theCoach3 = context.getBean("swimmer", SwimCoach.class);
+		Coach theCoach3 = context.getBean("swimCoach", Coach.class);
 		System.out.println(theCoach3.getDailyWorkout());
 		// Dependency injection via Field Injection
 		System.out.println(theCoach3.getDailyFortune());
 		// Accessing Property infor
-		System.out.println(theCoach3.getEmail());
-		System.out.println(theCoach3.getTeam());
+	//	System.out.println(theCoach3.getEmail());
+	//	System.out.println(theCoach3.getTeam());
 		System.out.println("");
-		
+/*		
 		// Used for example of reading files
-		Coach theCoach4 = context.getBean("boxer", Coach.class);
+		Coach theCoach4 = context.getBean("boxingCoach", Coach.class);
 		System.out.println(theCoach4.getDailyWorkout());
 		// Dependency injection via Field Injection
 		System.out.println(theCoach4.getDailyFortune());
 
+*/
 		// close the context
 		context.close();
 

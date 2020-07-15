@@ -29,6 +29,12 @@ public class FortuneDirectory implements FortuneService {
 	public String toString() {
 		return "FortuneDirectory [fortunes=" + Arrays.toString(fortunes) + ",\nPicking random item =" + y + "]";
 	}
-
+	
+	public FortuneDirectory(){
+		System.out.println("DEBUG --> Inside FortuneDirectory No-Arg Constructor");
+		System.out.println("DEBUG --> No arg constructor : "+ this.toString());
+	}
+	
+	
 	
 }
