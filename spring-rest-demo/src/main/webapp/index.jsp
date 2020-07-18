@@ -7,6 +7,9 @@
 <br>
 
 <a href="api/students">Get students</a>
+<br>
+
+<a href="api/students/0">Get student</a>
 
 
 </body>
