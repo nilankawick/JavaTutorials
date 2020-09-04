@@ -40,6 +40,7 @@ public class DemoAppConfig implements WebMvcConfigurer {
 
 	@Bean
 	public DataSource myDataSource() {
+		System.out.println("DEBUG INFO --> BEANs Initiating the myData Source");
 		
 		// create connection pool
 		ComboPooledDataSource myDataSource = new ComboPooledDataSource();
@@ -72,6 +73,7 @@ public class DemoAppConfig implements WebMvcConfigurer {
 	
 	private Properties getHibernateProperties() {
 
+		System.out.println("DEBUG INFO --> BEANs to Capture Hibernate properties");
 		// set hibernate properties
 		Properties props = new Properties();
 
@@ -98,6 +100,8 @@ public class DemoAppConfig implements WebMvcConfigurer {
 	@Bean
 	public LocalSessionFactoryBean sessionFactory(){
 		
+		System.out.println("DEBUG INFO --> BEANs to get handle to session objects");
+		
 		// create session factorys
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		
@@ -112,6 +116,8 @@ public class DemoAppConfig implements WebMvcConfigurer {
 	@Bean
 	@Autowired
 	public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
+		
+		System.out.println("DEBUG INFO --> BEANs to setup transaction manager");
 		
 		// setup transaction manager based on session factory
 		HibernateTransactionManager txManager = new HibernateTransactionManager();

@@ -27,14 +27,14 @@ public class CustomerRestController {
 	
 	@GetMapping("/customers")
 	public List<Customer> getCustomers(){
-		
+		System.out.println("DEBUG INFO --> REST API - /customers");
 		return tmpCustomerService.getCustomers();
 	}
 	
 	@GetMapping("/customers/{customerID}")
 	public Customer getCustomer(@PathVariable int customerID) {
 		
-		
+		System.out.println("DEBUG INFO --> REST API - /customers/ID");
 		Customer tmpCustomer = tmpCustomerService.getCustomer(customerID); 
 		
 		if (tmpCustomer == null) {
@@ -48,6 +48,7 @@ public class CustomerRestController {
 	
 	@PostMapping("/customers")
 	public Customer addCustomer(@RequestBody Customer tmpCustomer) {
+		System.out.println("DEBUG INFO --> REST POST API - /customers");
 		
 		//in the DAO implementation we use saveorUpdate() on the save method
 		// we would have to set the ID to 0 , when we use saveOrUpdate() the following is applicable
@@ -69,7 +70,7 @@ public class CustomerRestController {
 	
 		@PutMapping("/customers")
 		public Customer updateCustomer(@RequestBody Customer tmpCustomer) {
-			
+			System.out.println("DEBUG INFO --> REST PUT API - /customers");
 			
 			tmpCustomerService.saveCustomer(tmpCustomer);
 			
@@ -81,6 +82,7 @@ public class CustomerRestController {
 		
 		@DeleteMapping("/customers/{customerID}")
 		public String deleteCustomer(@PathVariable int customerID) {
+			System.out.println("DEBUG INFO --> REST DELETE API - /customers/ID");
 			
 			Customer tmpCustomer = tmpCustomerService.getCustomer(customerID);
 			
